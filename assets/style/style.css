@@ -10,7 +10,6 @@ body {
 
 .background-container {
   font-family: Lato;
-
   height: 100vh;
   width: 100%;
   display: flex;
@@ -59,6 +58,13 @@ body {
   color: #eb4d4d;
   top: 10%;
   left: 70%;
+}
+.winner {
+  background-color: #f7f7f7;
+}
+.winner .player-name {
+  font-weight: 300;
+  color: #eb4d4d;
 }
 .player-score {
   color: red;
