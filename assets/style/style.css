@@ -1,3 +1,143 @@
-html {
-  background-color: red;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.background-container {
+  font-family: Lato;
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/back.jpg");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.game-container {
+  height: 90vh;
+  width: 80%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.player-1-panel,
+.player-2-panel {
+  padding: 50px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.player-name {
+  font-size: 60px;
+  border-bottom: solid #222 2px;
+}
+.active {
+  background-color: #f7f7f7;
+}
+.active .player-name {
+  font-weight: 300;
+}
+
+.active .player-name::after {
+  content: "\2022";
+  font-size: 47px;
+  position: absolute;
+  color: #eb4d4d;
+  top: 10%;
+  left: 70%;
+}
+.player-score {
+  color: red;
+  font-size: 80px;
+  font-weight: 100;
+}
+
+.player-1-panel div,
+.player-2-panel div {
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  color: #fffafa;
+  background-color: rgb(214, 15, 15, 0.8);
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+#dice-1 {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#dice-2 {
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+button:hover {
+  font-weight: 600;
+}
+button:hover i {
+  margin-right: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn-new,
+.btn-hold,
+.btn-roll {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  background: none;
+  border: none;
+  font-family: Lato;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 300;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+i {
+  color: #eb4d4d;
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 32px;
+  line-height: 1;
+  vertical-align: text-top;
+  margin-top: -4px;
+  transition: margin 0.3s;
+}
+.btn-new {
+  top: 10%;
+}
+.btn-roll {
+  top: 70%;
+}
+.btn-hold {
+  top: 80%;
 }
