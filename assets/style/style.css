@@ -61,11 +61,10 @@ body {
 }
 .winner {
   background-color: #f7f7f7;
-}
-.winner .player-name {
   font-weight: 300;
   color: #eb4d4d;
 }
+
 .player-score {
   color: red;
   font-size: 80px;
@@ -146,4 +145,117 @@ i {
 }
 .btn-hold {
   top: 80%;
+}
+
+@media screen and (max-width: 1200px) {
+  .game-container {
+    height: 80vh;
+  }
+  .player-name {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+  }
+  .player-1-panel,
+  .player-2-panel {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    padding: 0px;
+  }
+  .player-name {
+    font-size: 30px;
+    position: absolute;
+    top: 20%;
+  }
+  .btn-new {
+    top: 0%;
+  }
+  .btn-roll {
+    top: 95%;
+    left: 30%;
+  }
+  .btn-hold {
+    top: 95%;
+    left: 70%;
+  }
+  .player-score {
+    position: absolute;
+    top: 20%;
+  }
+  .dice {
+    width: 70px;
+    height: 70px;
+  }
+
+  #dice-1 {
+    top: 45%;
+    left: 55%;
+    transform: translateX(0%);
+  }
+  #dice-2 {
+    top: 45%;
+    left: 35%;
+  }
+  .player-1-panel div,
+  .player-2-panel div {
+    font-size: 20px;
+    bottom: 20%;
+  }
+  .player-score {
+    position: absolute;
+    top: 30%;
+    font-size: 60px;
+  }
+  .btn-new,
+  .btn-hold,
+  .btn-roll {
+    font-size: 15px;
+    width: 150px;
+  }
+  .active .player-name::after {
+    content: "\2022";
+    font-size: 35px;
+    position: absolute;
+    color: #eb4d4d;
+    top: 10%;
+    left: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn-new,
+  .btn-hold,
+  .btn-roll {
+    font-size: 12px;
+    width: 150px;
+  }
+  i {
+    font-size: 25px;
+  }
+  .dice {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .dice {
+    width: 50px;
+    height: 50px;
+  }
+  #dice-1 {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+  }
+  #dice-2 {
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
 }
