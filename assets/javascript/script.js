@@ -18,7 +18,7 @@ newGame();
 function newGame() {
   scores = [0, 0];
   roundScore = 0;
-  activePlayer = 0;
+  activePlayer = 1;
   gamePlaying = true;
 
   document.querySelector(".dice").style.display = "none";
@@ -36,4 +36,41 @@ function newGame() {
   document.querySelector(".player-1-panel").classList.add("active");
 
   console.log("New game initiated.");
+}
+
+document.querySelector(".btn-new").addEventListener("click", function () {
+  newGame();
+});
+
+document.querySelector(".btn-roll").addEventListener("click", function () {
+  console.log("Dice Rolled.");
+  // Random numbers for dice
+  var dice1 = Math.floor(Math.random() * 6) + 1;
+  var dice2 = Math.floor(Math.random() * 6) + 1;
+
+  // Update UI
+  document.getElementById("dice-1").style.display = "block";
+  document.getElementById("dice-2").style.display = "block";
+  document.getElementById("dice-1").src =
+    "./assets/images/dice-" + dice1 + ".png";
+  document.getElementById("dice-2").src =
+    "./assets/images/dice-" + dice2 + ".png";
+
+  if (dice1 !== 1 && dice2 !== 1) {
+    roundScore += dice1 + dice2;
+
+    document.getElementById("current-" + activePlayer).textContent = roundScore;
+  } else {
+    nextPlayer();
+  }
+});
+function nextPlayer() {
+  activePlayer === 1 ? (activePlayer = 2) : (activePlayer = 1);
+
+  document.getElementById("current-1").textContent = "0";
+  document.getElementById("current-2").textContent = "0";
+  document.querySelector(".player-1-panel").classList.toggle("active");
+  document.querySelector(".player-2-panel").classList.toggle("active");
+
+  document.querySelector(".dice").style.display = "none";
 }
